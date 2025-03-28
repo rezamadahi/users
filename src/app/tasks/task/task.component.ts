@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Task } from '../task.model';
 import { DatePipe } from '@angular/common';
 
@@ -12,5 +12,10 @@ import { DatePipe } from '@angular/common';
 export class TaskComponent {
 
   @Input() task!: Task;
+  @Output() complete = new EventEmitter<string>();
+
+  onCompleteTask() {
+    this.complete.emit(this.task.id);
+  }
 
 }
