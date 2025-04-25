@@ -1,8 +1,13 @@
+@if (isAddingTask) {
+    <!-- <app-new-task (closeDialog)="isAddingTask = false" (add)="onAddTask($event)" /> -->
+    <app-new-task (closeDialog)="isAddingTask = false" [userId]="userId" />
+}
+
 <section id="tasks">
     <header>
         <h2>{{ name }}</h2>
         <menu>
-            <button type="button" (click)="onAddTask()">Add task</button>
+            <button type="button" (click)="onStartAddTask()">Add task</button>
         </menu>
     </header>
 
@@ -14,8 +19,4 @@
             </li>
         }
     </ul>
-
-    @if (isAddingTask) {
-        <app-new-task (closeDialog)="isAddingTask = false" />
-    }
 </section>

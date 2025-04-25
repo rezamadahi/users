@@ -1,10 +1,12 @@
-<article>
-    <h2>{{ task.title ? task.title : '' }}</h2>
-    <time >{{ task.dueDate ? (task.dueDate | date) : '' }}</time>
-    <p>{{ task.summary ? task.summary : '' }}</p>
-    <p class="actions">
-        <button type="button" (click)="onCompleteTask()" >
-            Complete
-        </button>
-    </p>
-</article>
+<app-card>
+    <article>
+        <h2>{{ task.title ? task.title : '' }}</h2>
+        <time >{{ task.dueDate ? (task.dueDate | date : 'fullDate' ) : '' }}</time>
+        <p>{{ task.summary ? task.summary : '' }}</p>
+        <p class="actions">
+            <button type="button" (click)="onCompleteTask()" >
+                Complete
+            </button>
+        </p>
+    </article>
+</app-card>
